@@ -35,7 +35,7 @@
         ></b-form-select>
       </b-form-group>
 
-      <b-form-group label="Add Permissions" label-for="tags-with-dropdown">
+      <b-form-group id="input-group-4" label="Add Permissions" label-for="tags-with-dropdown">
       <b-form-tags id="tags-with-dropdown" v-model="value" no-outer-focus class="mb-2">
         <template v-slot="{ tags, disabled, addTag, removeTag }">
           <ul v-if="tags.length > 0" class="list-inline d-inline-block mb-2">
