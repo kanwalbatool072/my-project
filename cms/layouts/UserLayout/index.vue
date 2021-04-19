@@ -2,7 +2,7 @@
   <div class="app">
     <AppHeader fixed>
       <SidebarToggler class="d-lg-none" display="md" mobile />
-      <b-link class="navbar-brand" to="#">
+      <!-- <b-link class="navbar-brand" to="#">
         <img
           class="navbar-brand-full"
           src="/img/brand/logo.svg"
@@ -17,15 +17,29 @@
           height="30"
           alt="CoreUI Logo"
         />
-      </b-link>
+      </b-link> -->
       <SidebarToggler class="d-md-down-none" display="lg" />
       <b-navbar-nav class="d-md-down-none">
-        <b-nav-item class="px-3" to="/dashboard">Dashboard</b-nav-item>
+        <!-- <b-nav-item class="px-3" to="/dashboard">Dashboard</b-nav-item>
         <b-nav-item class="px-3" to="/users" exact>Users</b-nav-item>
-        <b-nav-item class="px-3">Settings</b-nav-item>
+        <b-nav-item class="px-3">Settings</b-nav-item> -->
+        <b-nav-item href="#!" waves-fixed><b-icon class="fas fa-home"/></b-nav-item>
+        <mdb-dropdown tag="li" class="nav-item">
+                <mdb-dropdown-toggle tag="a" navLink color="none" slot="toggle" waves-fixed rounded>
+                  {{dropdownItem}}
+                </mdb-dropdown-toggle>
+                <mdb-dropdown-menu>
+                  <!-- <h6 class="dropdown-header">{{dropdownItem}}</h6> -->
+                  <mdb-dropdown-item  v-for="item in dropdownOptions" :key="item" 
+                                      v-bind:class="{'active':currentOptions === item}"
+                                      v-on:click="changeOption(item)">
+                      {{item}}
+                  </mdb-dropdown-item>
+                </mdb-dropdown-menu>
+            </mdb-dropdown>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item class="d-md-down-none">
+        <!-- <b-nav-item class="d-md-down-none">
           <i class="icon-bell"></i>
           <b-badge pill variant="danger">5</b-badge>
         </b-nav-item>
@@ -34,10 +48,10 @@
         </b-nav-item>
         <b-nav-item class="d-md-down-none">
           <i class="icon-location-pin"></i>
-        </b-nav-item>
+        </b-nav-item> -->
         <UserHeader />
       </b-navbar-nav>
-      <AsideToggler class="d-none d-lg-block" />
+      <!-- <AsideToggler class="d-none d-lg-block" /> -->
       <!--<AsideToggler class="d-lg-none" mobile />-->
     </AppHeader>
     <div class="app-body">
@@ -50,10 +64,10 @@
       </main>
       <AppAside fixed>
         <!--aside-->
-        <UserRightSidebar />
+        <!-- <UserRightSidebar /> -->
       </AppAside>
     </div>
-    <UserFooter />
+    <!-- <UserFooter /> -->
   </div>
 </template>
 
@@ -65,10 +79,10 @@ import {
   AsideToggler,
   Breadcrumb,
 } from "@coreui/vue";
-import UserRightSidebar from "./common/UserRightSideBar";
+// import UserRightSidebar from "./common/UserRightSideBar";
 import UserLeftSidebar from "./common/UserLeftSidebar";
 import UserHeader from "./common/UserHeader";
-import UserFooter from "./common/UserFooter";
+// import UserFooter from "./common/UserFooter";
 
 export default {
   name: "User",
@@ -77,9 +91,9 @@ export default {
     AppHeader,
     UserLeftSidebar,
     AppAside,
-    UserFooter,
+    // UserFooter,
     Breadcrumb,
-    UserRightSidebar,
+    // UserRightSidebar,
     UserHeader,
     SidebarToggler,
   },

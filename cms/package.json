@@ -1,8 +1,8 @@
 {
-  "name": "SigninTribeErp",
+  "name": "CMS",
   "version": "1.0.0",
-  "description": "My phenomenal Nuxt.js project",
-  "author": "shazimkhan",
+  "description": "FYP project",
+  "author": "CM Team",
   "private": true,
   "scripts": {
     "dev": "nuxt",
