@@ -20,7 +20,7 @@
       </b-link>
       <SidebarToggler class="d-md-down-none" display="lg" />
       <b-navbar-nav class="d-md-down-none">
-        <b-nav-item href="#!" waves-fixed>
+        <b-nav-item href="/admin" waves-fixed>
         <i class="icon-home"></i></b-nav-item>
 
       <b-nav-item>

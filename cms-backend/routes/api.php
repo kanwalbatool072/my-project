@@ -28,13 +28,13 @@ use App\Http\Controllers\Admin\FinanceReportingController;
 */
 
 Route::group(['prefix'=>'v1','middleware' => 'cors'], function () {
-    // Route::prefix('auth')->group(function () {
-    //     // Send reset password mail
-    //     Route::post('reset-password', 'AuthController@sendPasswordResetLink');
+    Route::prefix('auth')->group(function () {
+        // Send reset password mail
+        Route::post('reset-password', 'AuthController@sendPasswordResetLink');
         
-    //     // handle reset password form process
-    //     Route::post('reset/password', 'AuthController@callResetPassword');
-    // });
+        // handle reset password form process
+        Route::post('reset/password', 'AuthController@callResetPassword');
+    });
 
     Route::post('auth/login',[LoginController::Class,'login']);
 
@@ -57,14 +57,5 @@ Route::fallback(function () {
         return R::SimpleError('Page Not Found. If error persists, contact info@website.com');
     });
 
-Route::prefix('v1')->group(function () {
-    Route::prefix('auth')->group(function () {
-        // Send reset password mail
-        Route::post('reset-password', 'AuthController@sendPasswordResetLink');
-        
-        // handle reset password form process
-        Route::post('reset/password', 'AuthController@callResetPassword');
-    });
-});
 
 
