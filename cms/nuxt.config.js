@@ -18,13 +18,13 @@ export default {
                 content: process.env.npm_package_description || ""
             }
         ],
-        link: [
-            {
-                rel: "icon",
-                type: "image/x-icon",
-                href: "/favicon.ico"
-            }
-        ]
+        // link: [
+        //     {
+        //         rel: "icon",
+        //         type: "image/x-icon",
+        //         href: "/favicon.ico"
+        //     }
+        // ]
     },
     components: true,
     // router: {
@@ -90,7 +90,6 @@ export default {
         // common: {
         //     'Accept': 'application/json'
         // },
-        // baseURL: 'http://signintribe.com/demo/signinErpBackend/api/v1'
         baseURL: 'http://127.0.0.1:8000/api/v1'
     },
 

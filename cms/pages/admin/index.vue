@@ -1,6 +1,6 @@
 <template>
   <div>
-      Welcome To Dashbaord
+      Welcome Admin
   </div>
 </template>
 

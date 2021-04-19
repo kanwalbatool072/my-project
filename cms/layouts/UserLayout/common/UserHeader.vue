@@ -1,9 +1,8 @@
 <template>
   <AppHeaderDropdown right no-caret>
     <template slot="header">
-      <img
-        src="/img/avatars/6.jpg"
-        class="img-avatar"
+      <img class="rounded-circle"
+        src="/img/avatars/01.png"
         alt="admin@bootstrapmaster.com"
       /> </template
     >\

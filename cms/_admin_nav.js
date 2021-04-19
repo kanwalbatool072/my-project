@@ -1,50 +1,48 @@
 export default {
-    items: [
-        //   // {
-        //   // name: 'Dashboard',
-        //   // url: '/admin',
-        //   // icon: 'icon-speedometer',
-        //   // badge: {
-        //   //   variant: 'primary',
-        //   //   text: 'NEW'
-        //   // }
-        // },
-        {
-            name: 'Users',
+  items: [
+      {
+        name: 'Users',
+        icon: 'icon-user',
+        children: [{
+                name: 'Active users',
+                url: '/user',
+            },
+            {
+                name: 'Add users',
+                url: '/adduser',
+            },
+        ]
+      },
+      {
+        name: 'Groups',
+        icon: 'icon-people',
+        children: [
+          {
+            name: 'Active groups',
+            url: '/user',
+          },
+          {
+            name: 'Manage groups',
             url: '',
-            icon: 'icon-users',
-            children: [{
-                    name: 'Active users',
-                    url: '/user',
-                    icon: 'icon-users'
-                },
-                {
-                    name: 'Add user',
-                    url: '/adduser',
-                    icon: 'icon-users'
-                },
-            ]
-        },
-        {
-            name: 'Groups',
+          }
+        ]
+      },
+      {
+        name: 'Roles',
+        url: '',
+        icon: 'icon-user-following',
+        children: [
+          {
+            name: 'Create roles',
+            url: '/user',
+            icon: '',
+          },
+          {
+            name: 'Manage roles',
             url: '',
-            icon: 'icon-speedometer',
-            children: [{
-                    name: 'Active group',
-                    url: '/user',
-                    icon: 'icon-user',
-                },
-                {
-                    name: 'Manage group',
-                    url: '',
-                    icon: 'icon-user',
-                }
-
-            ],
-            badge: {
-                variant: 'primary',
-                text: 'NEW'
-            }
-        }
-    ]
+            icon: '',
+          }
+        ]
+      }
+  ]
 }
