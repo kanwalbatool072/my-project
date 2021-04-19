@@ -32,36 +32,16 @@
             </b-dropdown-item>
         </b-dropdown>
       </b-nav-item>
-      
-      <b-nav-item>
-        <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
-          <b-dropdown-item>First Action</b-dropdown-item>
-          <b-dropdown-item>Second Action</b-dropdown-item>
-          <b-dropdown-item>Third Action</b-dropdown-item>
-          <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item active>Active action</b-dropdown-item>
-          <b-dropdown-item disabled>Disabled action</b-dropdown-item>
-        </b-dropdown>
-      </b-nav-item>
+
         <!-- <b-nav-item class="px-3" to="/dashboard">Dashboard</b-nav-item>
         <b-nav-item class="px-3" to="/users" exact>Users</b-nav-item>
         <b-nav-item class="px-3">Settings</b-nav-item> -->
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
-        <!-- <b-nav-item class="d-md-down-none">
-          <i class="icon-bell"></i>
-          <b-badge pill variant="danger">5</b-badge>
-        </b-nav-item>
-        <b-nav-item class="d-md-down-none">
-          <i class="icon-list"></i>
-        </b-nav-item>
-        <b-nav-item class="d-md-down-none">
-          <i class="icon-location-pin"></i>
-        </b-nav-item> -->
+
         <AdminHeader />
       </b-navbar-nav>
-      <!-- <AsideToggler class="d-none d-lg-block" /> -->
-      <!--<AsideToggler class="d-lg-none" mobile />-->
+
     </AppHeader>
     <div class="app-body">
       <AdminLeftSidebar />
@@ -79,6 +59,9 @@
   </div>
 </template>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script>
 import {
   Header as AppHeader,

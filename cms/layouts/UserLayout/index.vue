@@ -38,6 +38,7 @@
                 </mdb-dropdown-menu>
             </mdb-dropdown>
       </b-navbar-nav>
+
       <b-navbar-nav class="ml-auto">
         <!-- <b-nav-item class="d-md-down-none">
           <i class="icon-bell"></i>

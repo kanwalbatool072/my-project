@@ -43,7 +43,7 @@ export default {
     },
     methods: {
         resetPassword() {
-            this.$http.post("modules/auth/reset/password/", {
+            this.$http.post("auth/reset/password/", {
                 token: this.$route.params.token,
                 email: this.email,
                 password: this.password,
@@ -51,7 +51,7 @@ export default {
             })
             .then(result => {
                 // console.log(result.data);
-                this.$router.push({name: 'login'})
+                this.$router.push({name: 'auth/login/'})
             }, error => {
                 console.error(error);
             });

@@ -2,34 +2,45 @@ export default {
   items: [
       {
         name: 'Users',
-        url: '',
-        icon: 'icon-users',
+        icon: 'icon-user',
         children: [{
                 name: 'Active users',
                 url: '/user',
-                icon: 'icon-users'
             },
             {
-                name: 'Add user',
+                name: 'Add users',
                 url: '/adduser',
-                icon: 'icon-users'
             },
         ]
       },
       {
         name: 'Groups',
-        url: '',
-        icon: '',
+        icon: 'icon-people',
         children: [
           {
-            name: 'Active group',
+            name: 'Active groups',
             url: '/user',
-            icon: 'icon-user',
           },
           {
-            name: 'Manage group',
+            name: 'Manage groups',
             url: '',
-            icon: 'icon-user',
+          }
+        ]
+      },
+      {
+        name: 'Roles',
+        url: '',
+        icon: 'icon-user-following',
+        children: [
+          {
+            name: 'Create roles',
+            url: '/user',
+            icon: '',
+          },
+          {
+            name: 'Manage roles',
+            url: '',
+            icon: '',
           }
         ]
       }

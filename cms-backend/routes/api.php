@@ -28,25 +28,21 @@ use App\Http\Controllers\Admin\FinanceReportingController;
 */
 
 Route::group(['prefix'=>'v1','middleware' => 'cors'], function () {
-    Route::post('auth/register',[RegisterController::Class,'register']);
+    // Route::prefix('auth')->group(function () {
+    //     // Send reset password mail
+    //     Route::post('reset-password', 'AuthController@sendPasswordResetLink');
+        
+    //     // handle reset password form process
+    //     Route::post('reset/password', 'AuthController@callResetPassword');
+    // });
+
     Route::post('auth/login',[LoginController::Class,'login']);
 
     Route::group(['middleware' => ['jwt.verify']], function(){
-        
         Route::get('/me', [LoginController::Class,'me']);
-        Route::get('cart-of-accounts-report', [FinanceReportingController::Class,'getChartofAccounts']);
         Route::post('auth/logout', [LoginController::Class,'logout']);
         Route::post('auth/refresh', [LoginController::class,'refresh']);
-        Route::resource('maintain-company', MaintainCompanyController::class);
-        Route::resource('company-registration', CompanyRegistrationController::class);
-        Route::resource('maintain-office', MaintainOfficeController::class);
-        Route::resource('maintain-department', MaintainDepartmentController::class);
-        Route::resource('maintain-calender', MaintainCalenderController::class);
-        Route::resource('maintain-shift', MaintainShiftController::class);
-        //Route::resource('maintain-accounts', MaintainChartofAccount::class);
-        Route::resource('employee-group', EmployeeGroupController::class);
-        Route::resource('chart-account', ChartofAccountController::class);
-        Route::get('/get-child-accounts/{parent_id}', [ChartofAccountController::class, 'getChildAccounts']);
+        // Route::get('/get-child-accounts/{parent_id}', [ChartofAccountController::class, 'getChildAccounts']);
     });
 
 });
@@ -60,4 +56,15 @@ Route::get('unauthorized', function () {
 Route::fallback(function () {
         return R::SimpleError('Page Not Found. If error persists, contact info@website.com');
     });
+
+Route::prefix('v1')->group(function () {
+    Route::prefix('auth')->group(function () {
+        // Send reset password mail
+        Route::post('reset-password', 'AuthController@sendPasswordResetLink');
+        
+        // handle reset password form process
+        Route::post('reset/password', 'AuthController@callResetPassword');
+    });
+});
+
 

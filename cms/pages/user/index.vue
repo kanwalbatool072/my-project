@@ -3,11 +3,10 @@
     <!-- User Interface controls -->
     <b-row>
       <b-col lg="4" class="my-1">
-      <b-button to="/adduser" variant="danger">adduser</b-button>
-
+      <i class="fa fa-user-plus" aria-hidden="true"></i><a href="/adduser"> Add a user</a>
       </b-col>
 
-      <b-col lg="6" class="my-1">
+      <b-col sm="5" class="my-1">
         <b-form-group
           label="Filter"
           label-for="filter-input"
@@ -31,29 +30,23 @@
         </b-form-group>
       </b-col>
 
-      <!-- <b-col lg="6" class="my-1">
+      <b-col sm="5" md="2" class="my-1">
         <b-form-group
-          v-model="sortDirection"
-          label="Filter On"
-          description="Leave all unchecked to filter on all data"
-          label-cols-sm="3"
+          label="Per page"
+          label-for="per-page-select"
+          label-cols-sm="6"
           label-align-sm="right"
           label-size="sm"
           class="mb-0"
-          v-slot="{ ariaDescribedby }"
         >
-          <b-form-checkbox-group
-            v-model="filterOn"
-            :aria-describedby="ariaDescribedby"
-            class="mt-1"
-          >
-            <b-form-checkbox value="name">Name</b-form-checkbox>
-            <b-form-checkbox value="age">Age</b-form-checkbox>
-            <b-form-checkbox value="isActive">Active</b-form-checkbox>
-          </b-form-checkbox-group>
+          <b-form-select
+            id="per-page-select"
+            v-model="perPage"
+            :options="pageOptions"
+            size="sm"
+          ></b-form-select>
         </b-form-group>
-      </b-col> -->
-
+      </b-col>
 
     <!-- Main table element -->
     <b-table
@@ -74,12 +67,21 @@
       <template #cell(name)="row">
         <a href="#">{{ row.value.first }} {{ row.value.last }}</a>
       </template>
-      <template #cell(actions)="row">
-        <b-button size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
-          Info modal
+      <template #cell(actions)>
+        <!-- <b-button size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
+          View
         </b-button>
         <b-button size="sm" @click="row.toggleDetails">
           {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
+        </b-button> -->
+        <b-button size="sm" class="mr-1">
+          View
+        </b-button>
+        <b-button size="sm" class="primary">
+          Edit
+        </b-button>
+        <b-button size="sm" class="danger">
+          Delete
         </b-button>
       </template>
  
@@ -96,28 +98,8 @@
     <b-modal :id="infoModal.id" :title="infoModal.title" ok-only @hide="resetInfoModal">
       <pre>{{ infoModal.content }}</pre>
     </b-modal>
-    
-      <b-col sm="5" md="6" class="my-1">
-        <b-form-group
-          label="Per page"
-          label-for="per-page-select"
-          label-cols-sm="6"
-          label-cols-md="4"
-          label-cols-lg="3"
-          label-align-sm="right"
-          label-size="sm"
-          class="mb-0"
-        >
-          <b-form-select
-            id="per-page-select"
-            v-model="perPage"
-            :options="pageOptions"
-            size="sm"
-          ></b-form-select>
-        </b-form-group>
-      </b-col>
 
-      <b-col sm="7" md="6" class="my-1">
+      <b-col sm="7" md="3" class="my-1">
         <b-pagination
           v-model="currentPage"
           :total-rows="totalRows"
@@ -206,11 +188,11 @@
       this.totalRows = this.items.length
     },
     methods: {
-      info(item, index, button) {
-        this.infoModal.title = `Row index: ${index}`
-        this.infoModal.content = JSON.stringify(item, null, 2)
-        this.$root.$emit('bv::show::modal', this.infoModal.id, button)
-      },
+      // info(item, index, button) {
+      //   this.infoModal.title = `Row index: ${index}`
+      //   this.infoModal.content = JSON.stringify(item, null, 2)
+      //   this.$root.$emit('bv::show::modal', this.infoModal.id, button)
+      // },
       resetInfoModal() {
         this.infoModal.title = ''
         this.infoModal.content = ''

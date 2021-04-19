@@ -49,9 +49,9 @@
                       />
                     </b-col>
                     <b-col cols="6" class="text-right">
-                      <NuxtLink to="/auth/ForgotPassword"
-
-                        >Forgot password?</NuxtLink>
+                      <NuxtLink to="/auth/ForgotPassword">
+                        Forgot password?
+                      </NuxtLink>
                     </b-col>
                   </b-row>
                 </b-form>
