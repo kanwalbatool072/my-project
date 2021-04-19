@@ -19,11 +19,11 @@ export default {
         children: [
           {
             name: 'Active groups',
-            url: '/user',
+            url: '/groups',
           },
           {
-            name: 'Manage groups',
-            url: '',
+            name: 'Add groups',
+            url: '/addGroup',
           }
         ]
       },
@@ -34,12 +34,12 @@ export default {
         children: [
           {
             name: 'Create roles',
-            url: '/user',
+            url: '/addRoles',
             icon: '',
           },
           {
             name: 'Manage roles',
-            url: '',
+            url: '/manageRoles',
             icon: '',
           }
         ]
