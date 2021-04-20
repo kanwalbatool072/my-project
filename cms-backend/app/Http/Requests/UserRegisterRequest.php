@@ -24,10 +24,10 @@ class UserRegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
             'email' => 'required|email|unique:users',
-            'role_id' => 'required',
-            'permission_ids' => 'required|array',
+            // 'permission_ids' => 'required|array',
             'password' => 'required'
         ];
         
@@ -35,11 +35,10 @@ class UserRegisterRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Name is required!',
+            'first_name.required' => 'First Name is required!',
+            'last_name.required' => 'Last Name is required!',
             'email.email' => 'Please Provide Valid Email',
             'email.unique' => 'Email is already taken',
-            'role_id.required' => 'Role is required',
-            'permission_ids.required' => 'Permission is required',
             'password.required' => 'Password is required!'
         ];
     }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MaintainCompanyStoreRequest extends FormRequest
+class AddGroupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,14 @@ class MaintainCompanyStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-            'company_name' => 'required|string',
-            'cost_center_code' => 'required|string',
-            'profit_center_code' => 'required|string'
+            'name'=>'required',
+        ];
+        
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Group Name is required!',
         ];
     }
 }
